@@ -333,32 +333,32 @@
 
     //reset formulario
     document.querySelector('#borrar').addEventListener('click',function() {
-
+       document.form.reset();
         nombre.placeholder="Combinación de números y letras";
-        nombre.value="";
         spanNombre.innerHTML="";
         nick.placeholder="Combinación de números y letras";
-        nick.value="";
         spanNick.innerHTML="";
-        apellidos.value="";
         apellidos.placeholder="Introduce apellidos";
-        apellidosSpan="";
+        apellidosSpan.innerHTML="";
         password.placeholder="Introduce password";
         spanPassword.innerHTML="";
-        password.value="";
         repitPassword.placeholder="Repite password";
         spanRepitPassword.innerHTML="";
-        repitPassword.value="";
         respuestaSpan.innerHTML="";
-        respuesta.value="";
         respuesta.placeholder="Respuesta a la pregunta";
         codigo.placeholder="Código de seguridad";
         codigoSpan.innerHTML="";
-        codigo.value="";
         document.querySelector('#mensaje').style.visibility = 'hidden';
-        check.checked=false;
-        selePregunta.selectedIndex=0;
         selespanpregunta.innerHTML="";
+        edadSpan.innerHTML="";
+        edad.placeholder="Introduce edad";
+        correo.placeholder="Introduce correo electrónico";
+        correoSpan.innerHTML="";
+        codigoPostal.placeholder="Código Postal";
+        spancodigoPostal.innerHTML="";
+        spanPaises.innerHTML="";
+        tituloRadio.innerHTML="";
+
         abrirForm('registro');
         document.querySelector('#siguiente').innerHTML="Siguiente";
         validar.style.visibility = 'hidden';

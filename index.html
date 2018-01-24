@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    </head>
+    <body>
+        <div id="contenedor">		        
+			<div class="tab">
+			   <h1 id="titulo" class="tablinks">Formulario de Registro</h1>
+			</div>
+            <form action="resultado.php" method="post" name="form"  onsubmit="return false">
+				<div id="registro" class="tabcontent">
+					<div>
+			           <div>
+			           		 <span>Introduce Pseudónimo:</span>
+			           	     <input id="nombre" type="text" name="pseudonimo" placeholder="Combinación de números y letras">
+			           	     <span></span>
+			           </div>
+			           <div>
+			              <span>Password:</span>
+			              <input id="password" type="password" name="password"  placeholder="Introduce password">
+			              <span></span>
+			           </div> 
+			           <div>
+			           	   <span>Repite Password:</span>
+			           	   <input id="passwordRepit" type="password" name="passwordRepit" placeholder="Repite password">
+			           	   <span></span>
+	                   </div>
+			        </div> 
+			        <div> 
+			           <div id="pregunta">
+			           	   <span>Pregunta de Seguridad:</span>
+				           <select id="seleccionPregunta">
+			           	         <option value="" selected disabled hidden>Selecciona una pregunta...</option>
+								 <option value="mascota">¿Nombre de tu mascota?</option>
+								 <option value="heroe">¿Nombre de tu héroe favorito?</option>
+							     <option value="amor">¿Primer amor de la infancia?</option>
+							</select>
+							<span></span>
+					    </div>	
+					    <div id="respuesta">
+					    	<span>Respuesta:</span>	
+							<input id="respuestaCampo" class="vacio" type="text" name="pregunta" placeholder="Respuesta a la pregunta">
+							<span></span>
+					    </div>
+					    <div id="codigo">
+					    	<span >Código de Seguridad: <span id="aleatorio"></span></span>
+							<input id="seguridad" class="vacio" type="text" name="seguridad" placeholder="Código de seguridad">
+							<span></span>
+					    </div>		
+						 
+					</div>	
+					<div>
+						<span>Condiciones de uso:</span>
+	                    <textarea readonly="true" wrap="false"> De conformidad con lo establecido en la Ley 15/1999 de 13 de diciembre y con el R. D. 1720/2007 de 21 de diciembre, sobre Protección de Datos de Carácter Personal, le informamos que todos los datos facilitados por usted serán incorporados a un fichero propiedad de Nova IT, con la finalidad de gestionar la información, responder a sus consultas y con fines estadísticos. Podrá; ejercer sus derechos de acceso, rectificación, cancelación y oposición al tratamiento de sus datos personales, en los términos y condiciones previstos por la Ley, dirigiéndose a Nova IT, indicando en el sobre la referencia "Datos Personales".</textarea>
+	                    <span>Aceptar condiciones</span>
+	                    <input id="check" type="checkbox" name="aceptar" value="condiciones">
+	                    <span id="mensaje">Debes aceptar las condiciones de uso</span>
+	                </div>    
+				</div>
+
+				<div id="usuario" class="tabcontent">
+					<div>
+			           <div>
+			           		 <span>Nombre:</span>
+			           	     <input id="nick" type="text" name="nombre" placeholder="Introduce nombre">
+			           	     <span></span>
+			           </div>
+			           <div>
+			              <span>Apellidos: </span>
+			              <input id="apellidos" type="text" name="apellidos" placeholder="Introduce apellidos">
+			              <span></span>
+			           </div> 
+			           <div>
+			           	   <span>Edad:</span>
+			           	   <input id="edad" type="number" min="3" max="99" name="edad" placeholder="Introduce edad">
+			           	   <span></span>
+	                   </div>
+	                   <div  id="contenedorRadio">
+						    <div>
+						 	    <H3>Género <span></span></H3>
+								<span>Femenino</span>
+								<input type="radio" name="sexo" value="femenino">
+								<span>Masculino</span>
+								<input type="radio" name="sexo" value="masculino">
+					        </div>		
+					    </div>	
+			        </div> 
+			        <div> 
+			           <div>
+			           	   <span>Zona:</span>
+				           <select id="selectPaises">
+				           	          <option value="" selected disabled hidden>Seleccione un País...</option>
+									  <option value="UE">Unión Europea</option>
+									  <option value="EEUU">Estados Unidos</option>
+									  <option value="UK">Reino Unido</option>
+									  <option value="RPC">China</option>
+							</select>
+							<span id="paises"></span>
+					    </div>	
+					    <div id="postal">
+					    	<span>Código Postal:</span>	
+							<input id="codPostal" type="number" name="codigoPostal" placeholder="Código Postal">
+							<span></span>
+					    </div>
+					    <div id="correo">
+					    	<span>eMail:</span>
+							<input type="email" name="email" placeholder="Introduce correo electrónico">
+							<span></span>
+					    </div>
+					   
+					</div>
+				</div>
+				<div class="tab">
+						<button id="siguiente" class="tablinks">Siguiente</button>
+						<button id="borrar">Restablecer formulario</button>
+						<button id="aceptar">Validar Formulario</button>
+			    </div>
+		    </form>  
+		</div>	
+    </body>
+    <script src="js/js.js"></script>
+</html>

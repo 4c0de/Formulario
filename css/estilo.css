@@ -1,0 +1,143 @@
+
+body {
+    font-family: verdana;
+    font-size: 16px;
+    outline: none;
+    color:#424242;
+}
+
+#contenedor{
+    width: 100%;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+/*ESTILO PARA PESTAÑAS*/
+.tab {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #585858;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 1.5em;
+}
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#titulo{
+    
+    color:#fff;
+    font-size: 3em;
+}
+/*FIN ESTILO PESTAÑAS*/
+
+
+/*CONTENEDORES PRINCIPALES FORMULARIO*/
+#registro, #usuario{
+    padding-top: 40px;
+    width:100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+    background-color:#A4A4A4;
+
+}    
+/*BOTONES FORMULARIO*/
+#siguiente, #borrar, #aceptar{
+    width: 400px;
+    color:#fff;
+}
+#aceptar{
+    visibility: hidden;
+}
+#siguiente:hover, #borrar:hover{
+    color:#000;
+}
+/*FORMULARIOS*/
+#registro>div:nth-child(1), #usuario>div:nth-child(1){
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content:space-between;
+    flex-direction: row;
+}
+
+#registro>div:nth-child(2), #usuario>div:nth-child(2){
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content:space-between;
+    flex-direction: row;
+
+}
+
+#registro>div:nth-child(3){
+    width: 90%;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+}
+#registro>div div, #usuario>div div{
+    width:30%;
+}
+
+#contenedor>div:nth-child(1){
+    text-align: center;
+}
+
+input, select, textarea{
+    width: 90%;
+}
+
+textarea{
+    height: 100px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+#mensaje{
+    color:red;
+    visibility: hidden;
+}    
+
+#contenedorRadio{
+    width: 200px;
+    font-size: 0.8em;
+    align-self:flex-start;
+    border: 3px solid #585858;
+    padding: 10px;
+    background-color:#848484;
+
+
+}
+#contenedorRadio div{
+    margin:0 auto;
+}
+#aleatorio{
+    color:red;
+}

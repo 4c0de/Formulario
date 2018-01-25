@@ -1,4 +1,3 @@
-
 (function(){
     //declaracion de variables
     var nombre=document.querySelector('#nombre');
@@ -34,7 +33,6 @@
     var estado=false;
     var campos=true;
     var comprobarcheck=false;
-  
     //abrir al cargar pagina formulario registro
     abrirForm('registro');
     //generar codigo seguridad 
@@ -43,7 +41,6 @@
     document.querySelector('#siguiente').addEventListener('click',function() {
         siguienteform();
     });
-  
     //cambiar de formulario
     function abrirForm(tab){
         var i, tabcontent, tablinks;
@@ -57,7 +54,6 @@
         }
         document.getElementById(tab).style.display = "flex";
     }
-
     //comprobar si campos de formularios contienen datos 
     function comprobarCampos(){
         var check=document.querySelector('#check').checked;
@@ -80,7 +76,6 @@
                      codigoSpan.style.color = "red";
                 }
         }
-
         if (estadoPassword){
                 if (comprobarLongitud(password,spanPassword)){
                     estadoPassword=true;
@@ -92,7 +87,6 @@
                 if (!macheoLogin(nombre,password)){
                     estadoNombre=true;
                     estadoPassword=true;
-
                 }else{
                     estadoNombre=false;
                     estadoPassword=false;
@@ -111,7 +105,6 @@
                     estadoRepit=false;
                 }  
         }
-
         if ((estadoPassword) && (estadoRepit)){
              var str="password no coinciden";
              if (MacheoPassword(password, repitPassword,str)){
@@ -121,9 +114,7 @@
                 estadoRepit=false,
                 estadoPassword=false;
              }
-
         }
- 
         if (estadoRespuesta){
                 if (comprobarLongitud(respuesta,respuestaSpan)){
                     estadoRespuesta=true;
@@ -131,7 +122,6 @@
                     estadoRespuesta=false;
                 }    
         }
-
         if (!estadoNombre || !estadoPassword || !estadoRepit || !estadoCheck || !estadoRespuesta ||
             !estadoCodigo || !estadoPregunta){
             campos=false;
@@ -140,7 +130,6 @@
             
         }
         return campos;
-                
     }
     //comprobar si select se ha elegido opcion
     function comprobarSelect(select,span){
@@ -162,11 +151,8 @@
         var contador=0;
         var len=pass.value.length;
         var len1=repitpass.value.length;
-
         if (len==len1){
-            var array=pass.value;
-            var array1=repitpass.value;
-                if ((array)==(array1)){
+                if ((pass.value)==(repitpass.value)){
                     igual=true;
                 }else{
                     igual=false;
@@ -189,23 +175,17 @@
                      spanPassword.style.color = "red";
                      spanRepitPassword.innerHTML="*";
                      spanRepitPassword.style.color="red";
-
         }       
         return igual;
-      
     }
-
     //comprobar si campo pseudonimo es igual a password
     function macheoLogin(nombre,pass){
         var igual=false;
         var contador=0;
         var len=nombre.value.length;
         var len1=pass.value.length;
-
         if (len==len1){
-            var array=nombre.value;
-            var array1=pass.value;
-                if ((array)==(array1)){
+                if ((nombre.value)==(pass.value)){
                     igual=true;
                 }else{
                     igual=false;
@@ -223,9 +203,7 @@
         var len=cod.length;
         var len1=cod1.length;
         if (len==len1){
-            var array=cod;
-            var array1=cod1;
-                if ((array)==(array1)){
+                if ((cod)==(cod1)){
                     igual=true;
                 }else{
                     igual=false;
@@ -236,8 +214,6 @@
         }       
         return igual;
     }
-
-
     //comprobar longitud de campo valor
     function comprobarLongitud(valor,texto){
               var comprobar=false;
@@ -264,7 +240,6 @@
                 comprobar=true;
             }
            return comprobar; 
-
     }
     //comprobar checkbox marcado
     function comprobarCheckbox(valor){
@@ -294,7 +269,6 @@
             }
         return comprobar;    
     }
-
     //Si validaciones correcta, se habilita siguiente form
     function siguienteform(){
           //Para bypasear formulario poner a false la condicion comprobarcampos
@@ -314,8 +288,6 @@
                         estado=false;
                     }
             }        
-          
-
     }
     //codigo seguridad validar formulario
     function generarCodigo(){
@@ -327,10 +299,7 @@
 
         } 
         document.querySelector('#aleatorio').innerHTML=texto;
-
     }
-
-
     //reset formulario
     document.querySelector('#borrar').addEventListener('click',function() {
        document.form.reset();
@@ -358,16 +327,12 @@
         spancodigoPostal.innerHTML="";
         spanPaises.innerHTML="";
         tituloRadio.innerHTML="";
-
         abrirForm('registro');
         document.querySelector('#siguiente').innerHTML="Siguiente";
         validar.style.visibility = 'hidden';
         generarCodigo();
-
     });
-
     //PARTE FORMULARIO UUSUARIO
-
     //validar formulario
     document.querySelector('#aceptar').addEventListener('click',function() {
         estadoNick=comprobarTexto(nick,spanNick,textoVacio);
@@ -388,7 +353,6 @@
                     estadoNick=true;
                     spanNick.innerHTML="";
                }
-
         }
         if (estadoApellidos){
                if (comprobarCadena(apellidos.value)){
@@ -400,9 +364,7 @@
                }else{
                     estadoApellidos=true;
                     apellidosSpan.innerHTML="";
-              
                }
-
         }
         if ((estadoNick) && (estadoApellidos) && (estadoEdad) && (estadoRadio) && (estadoPais) && (estadoCodigoPostal) && (estadoCorreo)){
               //si todos los campos validados--->enviamos formulario
@@ -410,62 +372,55 @@
               //redireccionamos a index
               window.location = 'index.html'
         }
-
     });
-
-
- //comprobar si contiene números   
-function comprobarCadena(cadena){
-  var letra;
-  var i=0;
-  var resultado=false;
-  
-  while (i<cadena.length){
-    letra = cadena.charAt(i);
-    if  ((letra >= '0') && (letra <= '9')){
-      resultado=true;
-      break;
-    }//if 
-    i++;
-  }//while
-  
-  return resultado;
-}
-
-//comprobar si opcion radio esta seleccionada
-function comprobarRadio(array,str){
-     var comprobar=false;
-     var i=0;
-     var lon=array.length;
-    while ((i<lon) && (comprobar==false)) {
-        if (array[i].checked){
-            comprobar=true;
-            str.innerHTML="";
-        }
-        if(!comprobar){
-            str.innerHTML="*";
-            str.style.color="red";
-        }
+    //comprobar si contiene números   
+    function comprobarCadena(cadena){
+      var letra;
+      var i=0;
+      var resultado=false;
+      while (i<cadena.length){
+        letra = cadena.charAt(i);
+        if  ((letra >= '0') && (letra <= '9')){
+          resultado=true;
+          break;
+        }//if 
         i++;
+      }//while
+      return resultado;
     }
-    return comprobar;   
-}
-//comprobar rango de edad 
-function comprobarRango(anos,info){
-    var comprobar=false;
-    if ((edad.value>=3) && (edad.value<=99)){
-        comprobar=true;
-        info.innerHTML="";
-    }else{
-        comprobar=false;
-        info.innerHTML="*";
-        info.style.color="red";
-        anos.value="";
-        anos.placeholder="el rango debe ser entre 3 y 99";
+    //comprobar si opcion radio esta seleccionada
+    function comprobarRadio(array,str){
+         var comprobar=false;
+         var i=0;
+         var lon=array.length;
+        while ((i<lon) && (comprobar==false)) {
+            if (array[i].checked){
+                comprobar=true;
+                str.innerHTML="";
+            }
+            if(!comprobar){
+                str.innerHTML="*";
+                str.style.color="red";
+            }
+            i++;
+        }
+        return comprobar;   
     }
-    return comprobar;
-}
-
+    //comprobar rango de edad 
+    function comprobarRango(anos,info){
+        var comprobar=false;
+        if ((edad.value>=3) && (edad.value<=99)){
+            comprobar=true;
+            info.innerHTML="";
+        }else{
+            comprobar=false;
+            info.innerHTML="*";
+            info.style.color="red";
+            anos.value="";
+            anos.placeholder="el rango debe ser entre 3 y 99";
+        }
+        return comprobar;
+    }
     //comprobar longitud de codigo postal
     function comprobarPostal(valor,texto){
               var comprobar=false;
@@ -495,10 +450,6 @@ function comprobarRango(anos,info){
               texto.style.color = 'red';
           }
           return comprobar;
-}
-
-
-
-
+    }
 })();
 
